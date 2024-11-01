@@ -1,1 +1,104 @@
-home work no 2
+#include<stdio.h>
+#include<math.h>
+#include<time.h>
+#include<stdlib.h>
+#include<stdbool.h>
+#include<ctype.h>
+
+
+
+int main (){
+srand(time(0));
+printf("welcome to the game of numbers you have 2 commands:\n");
+printf("A to AddAdad :\n");
+printf("B to AdadBas :\n");
+printf("\nenjoy!");
+unsigned father_hand,your_hand,adadBas=0;
+father_hand= rand()%10+1 ;
+printf ("\none of fathers cards is :%d\n", father_hand);
+your_hand=rand()%10+1 +rand()%10+1;
+printf ("sum of your cards is :%d\n", your_hand);
+father_hand+= rand()%10+1 ;
+ printf("whats your command?(A/B)\n");
+    do
+{
+    char command ;
+
+    scanf("%c",&command);
+    command=toupper(command);
+    switch (command)
+    {
+    case 'A':
+        your_hand +=rand()%10+1;
+        printf("your hand is: %d  \n",your_hand);
+        if (your_hand>21)
+        {
+            printf("\nyour hand is: %d  \n",your_hand);
+            printf("\nfathers hand is : %d\n",father_hand);
+            printf("you lose\n");
+            printf("thanks for playing");
+           
+        }
+        else if (your_hand==21)
+        {
+            printf("\nyour hand is: %d  \n",your_hand);
+            printf("\nfathers hand is : %d\n",father_hand);
+            printf("you win\n");
+            printf("thanks for playing");
+           
+        }
+        
+        break;
+    case 'B':
+        father_hand+=rand()%17+1;
+        if (21-your_hand<21-father_hand)
+        {
+            printf("\nyour hand is: %d  \n",your_hand);
+            printf("\nfathers hand is : %d\n",father_hand);
+            printf("you win\n");
+            printf("thanks for playing");
+          
+        }
+        else if (your_hand-21>father_hand-21)
+        {
+            printf("\nyour hand is: %d  \n",your_hand);
+            printf("\nfathers hand is : %d\n",father_hand);
+            printf("father wins\n");
+            printf("thanks for playing");
+         
+        }
+        else if (your_hand==father_hand)
+        {
+             printf("\nyour hand is: %d  \n",your_hand);
+             printf("\nfathers hand is : %d\n",father_hand);
+             printf("its a tie\n");
+             printf("thanks for playing");
+           
+ 
+        }
+        
+        
+        break;
+    default:
+        break;
+    }
+    
+  } while (father_hand<21&&your_hand<21);
+    
+
+
+
+
+
+
+
+  return 0;
+}
+
+
+
+
+
+
+
+
